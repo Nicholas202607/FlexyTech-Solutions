@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Flexxy Tech Solutions</title>
+  <meta name="description" content="Contact Flexxy Tech Solutions in Gaborone for web development, business intelligence, system development, automation, multimedia design and ICT training." />
+
+  <meta property="og:title" content="Contact Flexxy Tech Solutions" />
+  <meta property="og:description" content="Send a project request or feedback to Flexxy Tech Solutions." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{syne:["Syne","sans-serif"],dm:["DM Sans","sans-serif"]}}}};
+  </script>
+
+  <style>
+    :root{--navy:#050d1a;--navy2:#071428;--blue:#1d6cf0;--cyan:#00e5ff;--text:#e2e8f0;--muted:#94a3b8;--glass:rgba(255,255,255,.045);--border:rgba(0,229,255,.18);--glow:0 0 28px rgba(0,229,255,.32);--glow2:0 0 42px rgba(29,108,240,.55)}
+    *{box-sizing:border-box}body{margin:0;font-family:"DM Sans",sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden}h1,h2,h3,h4{font-family:"Syne",sans-serif}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;background:linear-gradient(90deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+    .nav-wrap{background:rgba(5,13,26,.86);border-bottom:1px solid rgba(0,229,255,.12);backdrop-filter:blur(18px)}
+    .logo-box{background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+    .nav-link{position:relative;color:var(--muted);transition:.3s;font-weight:600;font-size:14px}.nav-link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--cyan);transition:.3s}.nav-link:hover,.nav-link.active{color:var(--cyan)}.nav-link:hover::after,.nav-link.active::after{width:100%}
+    .mobile-menu{display:none}.mobile-menu.open{display:block}
+    .hero-bg{background:radial-gradient(ellipse at top,rgba(29,108,240,.28),transparent 55%),radial-gradient(circle at 80% 20%,rgba(0,229,255,.12),transparent 35%),var(--navy)}
+    .grid-bg{background-image:repeating-linear-gradient(rgba(0,229,255,.045) 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,rgba(0,229,255,.045) 0 1px,transparent 1px 42px)}
+    .circuit-bg{background-image:url("data:image/svg+xml,%3Csvg width='70' height='70' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 0v18M35 52v18M0 35h18M52 35h18' stroke='%2300e5ff' stroke-width='.5' opacity='.18'/%3E%3Ccircle cx='35' cy='35' r='2.5' fill='%2300e5ff' opacity='.18'/%3E%3C/svg%3E")}
+    .glass-card{background:var(--glass);border:1px solid var(--border);border-radius:18px;backdrop-filter:blur(14px);transition:.35s ease}.glass-card:hover{border-color:rgba(0,229,255,.55);box-shadow:var(--glow),0 18px 45px rgba(0,0,0,.35);transform:translateY(-6px)}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#1554c7);border:1px solid rgba(0,229,255,.38);color:white;font-weight:700;transition:.3s}.btn-primary:hover{box-shadow:var(--glow2);transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;background:transparent;border:1px solid rgba(0,229,255,.45);color:var(--cyan);font-weight:700;transition:.3s}.btn-outline:hover{background:rgba(0,229,255,.08);box-shadow:var(--glow);transform:translateY(-2px)}
+    .section-label{color:var(--cyan);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+    .service-icon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--cyan);background:linear-gradient(135deg,rgba(29,108,240,.28),rgba(0,229,255,.08));border:1px solid rgba(0,229,255,.22);font-size:23px}
+    .form-field{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(0,229,255,.18);color:var(--text);border-radius:12px;padding:13px 14px;outline:none;transition:.3s}
+    .form-field:focus{border-color:var(--cyan);box-shadow:0 0 0 3px rgba(0,229,255,.12)}
+    .form-field::placeholder{color:#64748b}
+    label{color:#cbd5e1;font-weight:700;font-size:14px}
+    .error{color:#fb7185;font-size:13px;margin-top:6px;display:none}
+    .success{display:none;border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.1);color:#86efac;border-radius:14px;padding:14px;margin-top:18px}
+    .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+    footer{background:rgba(4,10,20,.98);border-top:1px solid rgba(0,229,255,.12)}
+    #wa-btn{position:fixed;right:24px;bottom:24px;width:56px;height:56px;border-radius:50%;background:#25d366;color:white;display:flex;align-items:center;justify-content:center;font-size:25px;z-index:999;box-shadow:0 4px 24px rgba(37,211,102,.48)}
+    #back-top{position:fixed;right:30px;bottom:92px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,229,255,.35);background:rgba(29,108,240,.8);color:white;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;z-index:999}#back-top.show{opacity:1;pointer-events:auto}
+  </style>
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="nav-wrap fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logo-box w-10 h-10 rounded-xl flex items-center justify-center font-syne font-extrabold text-white">F</div>
+        <span class="font-syne text-xl font-bold text-white">Flexxy<span style="color:var(--cyan)">Tech</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-3">
+        <button id="themeToggle" class="w-10 h-10 rounded-xl border border-cyan-400/20 text-cyan-300" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="contact.html" class="btn-primary text-sm">Start a Project</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-2xl text-cyan-300" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden mt-4 border-t border-cyan-400/10 pt-4">
+      <div class="flex flex-col gap-4">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-bg relative pt-36 pb-24 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center reveal">
+      <p class="section-label mb-4">Get In Touch</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">Contact Flexxy Tech Solutions</h1>
+      <p class="text-slate-400 max-w-3xl mx-auto text-lg">Send us your project request, ask a question or share your feedback.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-24 circuit-bg">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8">
+
+        <div class="glass-card p-7 reveal">
+          <p class="section-label mb-3">Project Request</p>
+          <h2 class="text-3xl font-bold text-white mb-6">Tell Us What You Want to Build</h2>
+
+          <form id="contactForm" novalidate>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="name">Full Name</label>
+                <input id="name" name="name" type="text" class="form-field mt-2" placeholder="Enter your full name">
+                <p class="error" id="nameError">Full name is required.</p>
+              </div>
+
+              <div>
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" class="form-field mt-2" placeholder="name@example.com">
+                <p class="error" id="emailError">Enter a valid email address.</p>
+              </div>
+
+              <div>
+                <label for="phone">Phone Number</label>
+                <input id="phone" name="phone" type="tel" class="form-field mt-2" placeholder="+267 7XXXXXXX">
+                <p class="error" id="phoneError">Enter a valid phone number.</p>
+              </div>
+
+              <div>
+                <label for="service">Service Interested In</label>
+                <select id="service" name="service" class="form-field mt-2">
+                  <option value="">Select a service</option>
+                  <option>Business Intelligence</option>
+                  <option>Web Development</option>
+                  <option>System Development</option>
+                  <option>Process Automation</option>
+                  <option>Multimedia Design</option>
+                  <option>IT Training</option>
+                </select>
+                <p class="error" id="serviceError">Please select a service.</p>
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" class="form-field mt-2" placeholder="Tell us about your project"></textarea>
+              <p class="error" id="messageError">Message is required.</p>
+            </div>
+
+            <button type="submit" class="btn-primary mt-6"><i class="fa-solid fa-paper-plane"></i> Send Message</button>
+            <div id="contactSuccess" class="success">Thank you. Your project message has been received.</div>
+          </form>
+        </div>
+
+        <div class="glass-card p-7 reveal">
+          <p class="section-label mb-3">Feedback Form</p>
+          <h2 class="text-3xl font-bold text-white mb-6">Share Your Feedback</h2>
+
+          <form id="feedbackForm" novalidate>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div>
+                <label for="fbName">Full Name</label>
+                <input id="fbName" name="fbName" type="text" class="form-field mt-2" placeholder="Enter your full name">
+                <p class="error" id="fbNameError">Full name is required.</p>
+              </div>
+
+              <div>
+                <label for="fbEmail">Email Address</label>
+                <input id="fbEmail" name="fbEmail" type="email" class="form-field mt-2" placeholder="name@example.com">
+                <p class="error" id="fbEmailError">Enter a valid email address.</p>
+              </div>
+
+              <div>
+                <label for="rating">Rating</label>
+                <select id="rating" name="rating" class="form-field mt-2">
+                  <option value="">Select rating</option>
+                  <option value="5">5 - Excellent</option>
+                  <option value="4">4 - Good</option>
+                  <option value="3">3 - Average</option>
+                  <option value="2">2 - Poor</option>
+                  <option value="1">1 - Very Poor</option>
+                </select>
+                <p class="error" id="ratingError">Please select a rating.</p>
+              </div>
+
+              <div>
+                <label for="category">Feedback Category</label>
+                <select id="category" name="category" class="form-field mt-2">
+                  <option value="">Select category</option>
+                  <option>Website Experience</option>
+                  <option>Service Quality</option>
+                  <option>Customer Support</option>
+                  <option>Project Experience</option>
+                  <option>General Feedback</option>
+                </select>
+                <p class="error" id="categoryError">Please select a category.</p>
+              </div>
+            </div>
+
+            <div class="mt-5">
+              <label for="feedback">Feedback Message</label>
+              <textarea id="feedback" name="feedback" rows="5" class="form-field mt-2" placeholder="Write your feedback here"></textarea>
+              <p class="error" id="feedbackError">Feedback message is required.</p>
+            </div>
+
+            <button type="submit" class="btn-primary mt-6"><i class="fa-solid fa-star"></i> Submit Feedback</button>
+            <div id="feedbackSuccess" class="success">Thank you for your feedback. We appreciate your input.</div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-4 gap-6 mb-12">
+          <div class="glass-card p-6 reveal">
+            <div class="service-icon mb-5"><i class="fa-solid fa-location-dot"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Address</h3>
+            <p class="text-slate-400 text-sm">Block 6, Gaborone, Botswana</p>
+          </div>
+
+          <div class="glass-card p-6 reveal">
+            <div class="service-icon mb-5"><i class="fa-solid fa-phone"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Phone</h3>
+            <p class="text-slate-400 text-sm">+267 76369503</p>
+          </div>
+
+          <div class="glass-card p-6 reveal">
+            <div class="service-icon mb-5"><i class="fa-solid fa-envelope"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">Email</h3>
+            <p class="text-slate-400 text-sm">flexxytechsolutions@gmail.com</p>
+          </div>
+
+          <div class="glass-card p-6 reveal">
+            <div class="service-icon mb-5"><i class="fa-brands fa-whatsapp"></i></div>
+            <h3 class="text-xl font-bold text-white mb-2">WhatsApp</h3>
+            <p class="text-slate-400 text-sm">Chat with us directly</p>
+          </div>
+        </div>
+
+        <div class="glass-card p-4 reveal">
+          <iframe
+            title="Google Map showing Gaborone Botswana"
+            src="https://www.google.com/maps?q=Gaborone%20Botswana&output=embed"
+            width="100%"
+            height="400"
+            style="border:0;border-radius:14px;"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white/[.02]">
+      <div class="max-w-4xl mx-auto px-6 text-center reveal">
+        <p class="section-label mb-3">Social Links</p>
+        <h2 class="text-4xl font-bold text-white mb-8">Connect With Us</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#" class="btn-outline"><i class="fa-brands fa-facebook-f"></i> Facebook</a>
+          <a href="#" class="btn-outline"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          <a href="#" class="btn-outline"><i class="fa-brands fa-linkedin-in"></i> LinkedIn</a>
+          <a href="https://wa.me/26776369503" class="btn-outline"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-14">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="logo-box w-10 h-10 rounded-xl flex items-center justify-center font-bold">F</div>
+          <h3 class="font-syne text-xl font-bold text-white">Flexxy<span class="text-cyan-300">Tech</span></h3>
+        </div>
+        <p class="text-sm text-slate-500">Botswana's Digital Solutions Partner based in Gaborone.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Services</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><a href="services.html" class="hover:text-cyan-300">Business Intelligence</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">Web Development</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">System Development</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">Automation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><a href="about.html" class="hover:text-cyan-300">About</a></li>
+          <li><a href="projects.html" class="hover:text-cyan-300">Projects</a></li>
+          <li><a href="team.html" class="hover:text-cyan-300">Team</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Newsletter</h4>
+        <p class="text-sm text-slate-500 mb-4">Get updates from Flexxy Tech Solutions.</p>
+        <form id="newsletterForm" class="flex gap-2">
+          <input type="email" class="form-field" placeholder="Email">
+          <button class="btn-primary" type="submit">Go</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-8 mt-10 border-t border-cyan-400/10 flex flex-col md:flex-row justify-between gap-3 text-sm text-slate-600">
+      <p>&copy; <span id="year"></span> Flexxy Tech Solutions. All rights reserved.</p>
+      <p>Designed and built in Botswana 🇧🇼</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/26776369503" id="wa-btn" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button id="back-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("mobileMenu").classList.toggle("open"));
+    document.getElementById("year").textContent=new Date().getFullYear();
+
+    const progress=document.getElementById("progress-bar");
+    const backTop=document.getElementById("back-top");
+
+    window.addEventListener("scroll",()=>{
+      const total=document.body.scrollHeight-window.innerHeight;
+      progress.style.width=(window.scrollY/total)*100+"%";
+      backTop.classList.toggle("show",window.scrollY>400);
+    });
+
+    backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+    const themeToggle=document.getElementById("themeToggle");
+    if(localStorage.getItem("flexxy-theme")==="light")document.documentElement.classList.remove("dark");
+    themeToggle.addEventListener("click",()=>{
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem("flexxy-theme",document.documentElement.classList.contains("dark")?"dark":"light");
+    });
+
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("visible")});
+    },{threshold:.12});
+
+    document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+    function showError(id, show) {
+      document.getElementById(id).style.display = show ? "block" : "none";
+    }
+
+    function validEmail(email) {
+      return /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);
+    }
+
+    function validPhone(phone) {
+      return phone.trim() === "" || /^[+0-9\\s]{7,15}$/.test(phone);
+    }
+
+    document.getElementById("contactForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const service = document.getElementById("service").value.trim();
+      const message = document.getElementById("message").value.trim();
+
+      let ok = true;
+
+      showError("nameError", !name);
+      showError("emailError", !validEmail(email));
+      showError("phoneError", !validPhone(phone));
+      showError("serviceError", !service);
+      showError("messageError", !message);
+
+      if (!name || !validEmail(email) || !validPhone(phone) || !service || !message) ok = false;
+
+      if (ok) {
+        document.getElementById("contactSuccess").style.display = "block";
+        this.reset();
+      }
+    });
+
+    document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const fbName = document.getElementById("fbName").value.trim();
+      const fbEmail = document.getElementById("fbEmail").value.trim();
+      const rating = document.getElementById("rating").value.trim();
+      const category = document.getElementById("category").value.trim();
+      const feedback = document.getElementById("feedback").value.trim();
+
+      let ok = true;
+
+      showError("fbNameError", !fbName);
+      showError("fbEmailError", !validEmail(fbEmail));
+      showError("ratingError", !rating);
+      showError("categoryError", !category);
+      showError("feedbackError", !feedback);
+
+      if (!fbName || !validEmail(fbEmail) || !rating || !category || !feedback) ok = false;
+
+      if (ok) {
+        document.getElementById("feedbackSuccess").style.display = "block";
+        this.reset();
+      }
+    });
+
+    document.getElementById("newsletterForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      alert("Thank you for subscribing.");
+      this.reset();
+    });
+  </script>
+</body>
+</html>

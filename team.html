@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Team | Flexxy Tech Solutions</title>
+  <meta name="description" content="Meet the Flexxy Tech Solutions team and explore volunteer opportunities in web development, data analysis and graphic design." />
+
+  <meta property="og:title" content="Flexxy Tech Solutions Team" />
+  <meta property="og:description" content="Meet our leadership team and join our volunteer opportunities." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config={darkMode:"class",theme:{extend:{fontFamily:{syne:["Syne","sans-serif"],dm:["DM Sans","sans-serif"]}}}};
+  </script>
+
+  <style>
+    :root{--navy:#050d1a;--navy2:#071428;--blue:#1d6cf0;--cyan:#00e5ff;--text:#e2e8f0;--muted:#94a3b8;--glass:rgba(255,255,255,.045);--border:rgba(0,229,255,.18);--glow:0 0 28px rgba(0,229,255,.32);--glow2:0 0 42px rgba(29,108,240,.55)}
+    *{box-sizing:border-box}body{margin:0;font-family:"DM Sans",sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden}h1,h2,h3,h4{font-family:"Syne",sans-serif}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;background:linear-gradient(90deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+    .nav-wrap{background:rgba(5,13,26,.86);border-bottom:1px solid rgba(0,229,255,.12);backdrop-filter:blur(18px)}
+    .logo-box{background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+    .nav-link{position:relative;color:var(--muted);transition:.3s;font-weight:600;font-size:14px}.nav-link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--cyan);transition:.3s}.nav-link:hover,.nav-link.active{color:var(--cyan)}.nav-link:hover::after,.nav-link.active::after{width:100%}
+    .mobile-menu{display:none}.mobile-menu.open{display:block}
+    .hero-bg{background:radial-gradient(ellipse at top,rgba(29,108,240,.28),transparent 55%),radial-gradient(circle at 80% 20%,rgba(0,229,255,.12),transparent 35%),var(--navy)}
+    .grid-bg{background-image:repeating-linear-gradient(rgba(0,229,255,.045) 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,rgba(0,229,255,.045) 0 1px,transparent 1px 42px)}
+    .circuit-bg{background-image:url("data:image/svg+xml,%3Csvg width='70' height='70' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 0v18M35 52v18M0 35h18M52 35h18' stroke='%2300e5ff' stroke-width='.5' opacity='.18'/%3E%3Ccircle cx='35' cy='35' r='2.5' fill='%2300e5ff' opacity='.18'/%3E%3C/svg%3E")}
+    .glass-card{background:var(--glass);border:1px solid var(--border);border-radius:18px;backdrop-filter:blur(14px);transition:.35s ease}.glass-card:hover{border-color:rgba(0,229,255,.55);box-shadow:var(--glow),0 18px 45px rgba(0,0,0,.35);transform:translateY(-6px)}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#1554c7);border:1px solid rgba(0,229,255,.38);color:white;font-weight:700;transition:.3s}.btn-primary:hover{box-shadow:var(--glow2);transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;background:transparent;border:1px solid rgba(0,229,255,.45);color:var(--cyan);font-weight:700;transition:.3s}.btn-outline:hover{background:rgba(0,229,255,.08);box-shadow:var(--glow);transform:translateY(-2px)}
+    .section-label{color:var(--cyan);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+    .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+    footer{background:rgba(4,10,20,.98);border-top:1px solid rgba(0,229,255,.12)}
+    #wa-btn{position:fixed;right:24px;bottom:24px;width:56px;height:56px;border-radius:50%;background:#25d366;color:white;display:flex;align-items:center;justify-content:center;font-size:25px;z-index:999;box-shadow:0 4px 24px rgba(37,211,102,.48)}
+    #back-top{position:fixed;right:30px;bottom:92px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,229,255,.35);background:rgba(29,108,240,.8);color:white;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;z-index:999}#back-top.show{opacity:1;pointer-events:auto}
+  </style>
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="nav-wrap fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logo-box w-10 h-10 rounded-xl flex items-center justify-center font-syne font-extrabold text-white">F</div>
+        <span class="font-syne text-xl font-bold text-white">Flexxy<span style="color:var(--cyan)">Tech</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link active">Team</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-3">
+        <button id="themeToggle" class="w-10 h-10 rounded-xl border border-cyan-400/20 text-cyan-300" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="contact.html" class="btn-primary text-sm">Start a Project</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-2xl text-cyan-300" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden mt-4 border-t border-cyan-400/10 pt-4">
+      <div class="flex flex-col gap-4">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link active">Team</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-bg relative pt-36 pb-24 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center reveal">
+      <p class="section-label mb-4">Our People</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">Meet the Flexxy Tech Team</h1>
+      <p class="text-slate-400 max-w-3xl mx-auto text-lg">A growing team focused on technology, design, marketing and brand visibility.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-24 circuit-bg">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <article class="glass-card p-6 text-center reveal">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80" alt="Blessing Keabetswe Rankunyana" class="w-32 h-32 rounded-full object-cover mx-auto mb-5 border border-cyan-400/30" loading="lazy">
+          <h2 class="text-xl font-bold text-white">Blessing Keabetswe Rankunyana</h2>
+          <p class="text-cyan-300 text-sm font-bold mb-4">Founder & CEO</p>
+          <p class="text-sm text-slate-400">8+ years experience in ICT solutions, web development, data analytics, business intelligence and digital strategy.</p>
+        </article>
+
+        <article class="glass-card p-6 text-center reveal">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80" alt="Linda Kgobati" class="w-32 h-32 rounded-full object-cover mx-auto mb-5 border border-cyan-400/30" loading="lazy">
+          <h2 class="text-xl font-bold text-white">Linda Kgobati</h2>
+          <p class="text-cyan-300 text-sm font-bold mb-4">Chief Technology Officer</p>
+          <p class="text-sm text-slate-400">Skilled in SQL, database architecture, software development and technical system planning.</p>
+        </article>
+
+        <article class="glass-card p-6 text-center reveal">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="Ketshepile Jordan Monwela" class="w-32 h-32 rounded-full object-cover mx-auto mb-5 border border-cyan-400/30" loading="lazy">
+          <h2 class="text-xl font-bold text-white">Ketshepile Jordan Monwela</h2>
+          <p class="text-cyan-300 text-sm font-bold mb-4">Marketing Director</p>
+          <p class="text-sm text-slate-400">Also CEO of Mebala Consultants, with experience in marketing, branding, business growth and communication.</p>
+        </article>
+
+        <article class="glass-card p-6 text-center reveal">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Tlhalefo Monabane" class="w-32 h-32 rounded-full object-cover mx-auto mb-5 border border-cyan-400/30" loading="lazy">
+          <h2 class="text-xl font-bold text-white">Tlhalefo Monabane</h2>
+          <p class="text-cyan-300 text-sm font-bold mb-4">Brand Ambassador</p>
+          <p class="text-sm text-slate-400">Supports visibility, brand awareness, outreach and community engagement.</p>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+          <p class="section-label mb-3">Join Us</p>
+          <h2 class="text-4xl font-bold text-white">Volunteer Opportunities</h2>
+          <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Build your experience while supporting real digital projects.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+          <article class="glass-card p-7 reveal">
+            <i class="fa-solid fa-laptop-code text-4xl text-cyan-300 mb-5"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Web Development Volunteer</h3>
+            <p class="text-sm text-cyan-300 font-bold mb-4">Part-time · Remote</p>
+            <p class="text-slate-400 text-sm mb-5">Best for someone with HTML, CSS and JavaScript basics who wants to learn React and real project work.</p>
+            <a href="contact.html" class="btn-outline text-sm">Apply Now</a>
+          </article>
+
+          <article class="glass-card p-7 reveal">
+            <i class="fa-solid fa-chart-simple text-4xl text-cyan-300 mb-5"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Data Analysis Volunteer</h3>
+            <p class="text-sm text-cyan-300 font-bold mb-4">Part-time · Hybrid</p>
+            <p class="text-slate-400 text-sm mb-5">Best for someone with basic Excel skills. Training on Power BI will be provided.</p>
+            <a href="contact.html" class="btn-outline text-sm">Apply Now</a>
+          </article>
+
+          <article class="glass-card p-7 reveal">
+            <i class="fa-solid fa-pen-nib text-4xl text-cyan-300 mb-5"></i>
+            <h3 class="text-xl font-bold text-white mb-2">Graphic Design Volunteer</h3>
+            <p class="text-sm text-cyan-300 font-bold mb-4">Flexible · Remote</p>
+            <p class="text-slate-400 text-sm mb-5">Best for someone who can use Canva or Adobe tools to create social media and brand visuals.</p>
+            <a href="contact.html" class="btn-outline text-sm">Apply Now</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white/[.02]">
+      <div class="max-w-4xl mx-auto px-6 text-center reveal">
+        <p class="section-label mb-3">Grow With Us</p>
+        <h2 class="text-4xl font-bold text-white mb-5">Want to Join the Flexxy Tech Network?</h2>
+        <p class="text-slate-400 mb-8">Reach out and tell us about your skills, interests and the type of digital work you want to learn.</p>
+        <a href="contact.html" class="btn-primary">Join Our Team</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-14">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="logo-box w-10 h-10 rounded-xl flex items-center justify-center font-bold">F</div>
+          <h3 class="font-syne text-xl font-bold text-white">Flexxy<span class="text-cyan-300">Tech</span></h3>
+        </div>
+        <p class="text-sm text-slate-500">Botswana's Digital Solutions Partner based in Gaborone.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Services</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><a href="services.html" class="hover:text-cyan-300">Business Intelligence</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">Web Development</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">System Development</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">Automation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><a href="about.html" class="hover:text-cyan-300">About</a></li>
+          <li><a href="projects.html" class="hover:text-cyan-300">Projects</a></li>
+          <li><a href="team.html" class="hover:text-cyan-300">Team</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><i class="fa-solid fa-location-dot text-cyan-300 mr-2"></i>Block 6, Gaborone</li>
+          <li><i class="fa-solid fa-phone text-cyan-300 mr-2"></i>+267 76369503</li>
+          <li><i class="fa-solid fa-envelope text-cyan-300 mr-2"></i>flexxytechsolutions@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-8 mt-10 border-t border-cyan-400/10 flex flex-col md:flex-row justify-between gap-3 text-sm text-slate-600">
+      <p>&copy; <span id="year"></span> Flexxy Tech Solutions. All rights reserved.</p>
+      <p>Designed and built in Botswana 🇧🇼</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/26776369503" id="wa-btn" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button id="back-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("mobileMenu").classList.toggle("open"));
+    document.getElementById("year").textContent=new Date().getFullYear();
+
+    const progress=document.getElementById("progress-bar");
+    const backTop=document.getElementById("back-top");
+
+    window.addEventListener("scroll",()=>{
+      const total=document.body.scrollHeight-window.innerHeight;
+      progress.style.width=(window.scrollY/total)*100+"%";
+      backTop.classList.toggle("show",window.scrollY>400);
+    });
+
+    backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+    const themeToggle=document.getElementById("themeToggle");
+    if(localStorage.getItem("flexxy-theme")==="light")document.documentElement.classList.remove("dark");
+    themeToggle.addEventListener("click",()=>{
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem("flexxy-theme",document.documentElement.classList.contains("dark")?"dark":"light");
+    });
+
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("visible")});
+    },{threshold:.12});
+
+    document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>

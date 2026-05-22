@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>About Us | Flexxy Tech Solutions</title>
+  <meta name="description" content="Learn about Flexxy Tech Solutions, a Gaborone-based ICT services company helping businesses grow through websites, data, systems and automation." />
+
+  <meta property="og:title" content="About Flexxy Tech Solutions" />
+  <meta property="og:description" content="A Botswana-based digital solutions company focused on practical ICT services." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1551434678-e076c223a692?w=1200" />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = { darkMode:"class", theme:{ extend:{ fontFamily:{ syne:["Syne","sans-serif"], dm:["DM Sans","sans-serif"] } } } };
+  </script>
+
+  <style>
+    :root{--navy:#050d1a;--navy2:#071428;--blue:#1d6cf0;--cyan:#00e5ff;--text:#e2e8f0;--muted:#94a3b8;--glass:rgba(255,255,255,.045);--border:rgba(0,229,255,.18);--glow:0 0 28px rgba(0,229,255,.32);--glow2:0 0 42px rgba(29,108,240,.55)}
+    *{box-sizing:border-box}body{margin:0;font-family:"DM Sans",sans-serif;background:var(--navy);color:var(--text);overflow-x:hidden}h1,h2,h3,h4{font-family:"Syne",sans-serif}
+    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;z-index:9999;background:linear-gradient(90deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+    .nav-wrap{background:rgba(5,13,26,.86);border-bottom:1px solid rgba(0,229,255,.12);backdrop-filter:blur(18px)}
+    .logo-box{background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:var(--glow)}
+    .nav-link{position:relative;color:var(--muted);transition:.3s;font-weight:600;font-size:14px}.nav-link::after{content:"";position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--cyan);transition:.3s}.nav-link:hover,.nav-link.active{color:var(--cyan)}.nav-link:hover::after,.nav-link.active::after{width:100%}
+    .mobile-menu{display:none}.mobile-menu.open{display:block}
+    .hero-bg{background:radial-gradient(ellipse at top,rgba(29,108,240,.28),transparent 55%),radial-gradient(circle at 80% 20%,rgba(0,229,255,.12),transparent 35%),var(--navy)}
+    .grid-bg{background-image:repeating-linear-gradient(rgba(0,229,255,.045) 0 1px,transparent 1px 42px),repeating-linear-gradient(90deg,rgba(0,229,255,.045) 0 1px,transparent 1px 42px)}
+    .circuit-bg{background-image:url("data:image/svg+xml,%3Csvg width='70' height='70' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M35 0v18M35 52v18M0 35h18M52 35h18' stroke='%2300e5ff' stroke-width='.5' opacity='.18'/%3E%3Ccircle cx='35' cy='35' r='2.5' fill='%2300e5ff' opacity='.18'/%3E%3C/svg%3E")}
+    .glass-card{background:var(--glass);border:1px solid var(--border);border-radius:18px;backdrop-filter:blur(14px);transition:.35s ease}.glass-card:hover{border-color:rgba(0,229,255,.55);box-shadow:var(--glow),0 18px 45px rgba(0,0,0,.35);transform:translateY(-6px)}
+    .btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#1554c7);border:1px solid rgba(0,229,255,.38);color:white;font-weight:700;transition:.3s}.btn-primary:hover{box-shadow:var(--glow2);transform:translateY(-2px)}
+    .btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 26px;border-radius:12px;background:transparent;border:1px solid rgba(0,229,255,.45);color:var(--cyan);font-weight:700;transition:.3s}.btn-outline:hover{background:rgba(0,229,255,.08);box-shadow:var(--glow);transform:translateY(-2px)}
+    .section-label{color:var(--cyan);font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:800}
+    .service-icon{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;color:var(--cyan);background:linear-gradient(135deg,rgba(29,108,240,.28),rgba(0,229,255,.08));border:1px solid rgba(0,229,255,.22);font-size:23px}
+    .reveal{opacity:0;transform:translateY(28px);transition:.7s ease}.reveal.visible{opacity:1;transform:none}
+    footer{background:rgba(4,10,20,.98);border-top:1px solid rgba(0,229,255,.12)}
+    #wa-btn{position:fixed;right:24px;bottom:24px;width:56px;height:56px;border-radius:50%;background:#25d366;color:white;display:flex;align-items:center;justify-content:center;font-size:25px;z-index:999;box-shadow:0 4px 24px rgba(37,211,102,.48)}
+    #back-top{position:fixed;right:30px;bottom:92px;width:44px;height:44px;border-radius:50%;border:1px solid rgba(0,229,255,.35);background:rgba(29,108,240,.8);color:white;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:.3s;z-index:999}#back-top.show{opacity:1;pointer-events:auto}
+  </style>
+</head>
+
+<body>
+  <div id="progress-bar"></div>
+
+  <nav class="nav-wrap fixed top-0 left-0 right-0 z-50 px-6 py-4">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logo-box w-10 h-10 rounded-xl flex items-center justify-center font-syne font-extrabold text-white">F</div>
+        <span class="font-syne text-xl font-bold text-white">Flexxy<span style="color:var(--cyan)">Tech</span></span>
+      </a>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+
+      <div class="hidden md:flex items-center gap-3">
+        <button id="themeToggle" class="w-10 h-10 rounded-xl border border-cyan-400/20 text-cyan-300" aria-label="Toggle theme"><i class="fa-solid fa-moon"></i></button>
+        <a href="contact.html" class="btn-primary text-sm">Start a Project</a>
+      </div>
+
+      <button id="menuBtn" class="md:hidden text-2xl text-cyan-300" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu md:hidden mt-4 border-t border-cyan-400/10 pt-4">
+      <div class="flex flex-col gap-4">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link active">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="projects.html" class="nav-link">Projects</a>
+        <a href="team.html" class="nav-link">Team</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero-bg relative pt-36 pb-24 overflow-hidden">
+    <div class="absolute inset-0 grid-bg opacity-40"></div>
+    <div class="max-w-7xl mx-auto px-6 relative z-10 text-center reveal">
+      <p class="section-label mb-4">Who We Are</p>
+      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">About Flexxy Tech Solutions</h1>
+      <p class="text-slate-400 max-w-3xl mx-auto text-lg">We are a Botswana-based ICT company building useful digital solutions for businesses, students, startups and organisations.</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="py-24 circuit-bg">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="reveal">
+          <p class="section-label mb-3">Our Story</p>
+          <h2 class="text-4xl font-bold text-white mb-6">Built for Botswana’s Digital Future</h2>
+          <p class="text-slate-400 leading-relaxed mb-5">
+            Flexxy Tech Solutions was created to help local businesses and individuals use technology in a simple and practical way. The company focuses on real problems such as poor online visibility, manual reporting, weak branding and slow business processes.
+          </p>
+          <p class="text-slate-400 leading-relaxed">
+            Our work combines web development, data analytics, business intelligence, system development and design. This allows us to support clients from idea stage up to final digital delivery.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 reveal">
+          <h3 class="text-2xl font-bold text-white mb-5">Company Snapshot</h3>
+          <div class="space-y-4 text-slate-400">
+            <p><i class="fa-solid fa-building text-cyan-300 mr-3"></i><strong class="text-white">Company:</strong> Flexxy Tech Solutions</p>
+            <p><i class="fa-solid fa-user-tie text-cyan-300 mr-3"></i><strong class="text-white">Founder:</strong> Blessing Keabetswe Rankunyana</p>
+            <p><i class="fa-solid fa-location-dot text-cyan-300 mr-3"></i><strong class="text-white">Location:</strong> Block 6, Gaborone, Botswana</p>
+            <p><i class="fa-solid fa-phone text-cyan-300 mr-3"></i><strong class="text-white">Phone:</strong> +267 76369503</p>
+            <p><i class="fa-solid fa-envelope text-cyan-300 mr-3"></i><strong class="text-white">Email:</strong> flexxytechsolutions@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-6">
+        <div class="glass-card p-8 reveal">
+          <div class="service-icon mb-5"><i class="fa-solid fa-bullseye"></i></div>
+          <h3 class="text-2xl font-bold text-white mb-4">Our Mission</h3>
+          <p class="text-slate-400">To provide smart, affordable and practical ICT solutions that help businesses and individuals work better, grow faster and compete digitally.</p>
+        </div>
+
+        <div class="glass-card p-8 reveal">
+          <div class="service-icon mb-5"><i class="fa-solid fa-eye"></i></div>
+          <h3 class="text-2xl font-bold text-white mb-4">Our Vision</h3>
+          <p class="text-slate-400">To become one of Botswana’s trusted digital solution partners for websites, data, systems, automation and ICT training.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 bg-white/[.02]">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+          <p class="section-label mb-3">What Guides Us</p>
+          <h2 class="text-4xl font-bold text-white">Core Values</h2>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <div class="glass-card p-7 reveal">
+            <i class="fa-solid fa-lightbulb text-3xl text-cyan-300 mb-5"></i>
+            <h3 class="font-bold text-white mb-3">Innovation</h3>
+            <p class="text-sm text-slate-400">We use modern tools to solve real problems.</p>
+          </div>
+
+          <div class="glass-card p-7 reveal">
+            <i class="fa-solid fa-handshake text-3xl text-cyan-300 mb-5"></i>
+            <h3 class="font-bold text-white mb-3">Trust</h3>
+            <p class="text-sm text-slate-400">We work with honesty and clear communication.</p>
+          </div>
+
+          <div class="glass-card p-7 reveal">
+            <i class="fa-solid fa-gauge-high text-3xl text-cyan-300 mb-5"></i>
+            <h3 class="font-bold text-white mb-3">Quality</h3>
+            <p class="text-sm text-slate-400">We focus on clean work that clients can depend on.</p>
+          </div>
+
+          <div class="glass-card p-7 reveal">
+            <i class="fa-solid fa-users text-3xl text-cyan-300 mb-5"></i>
+            <h3 class="font-bold text-white mb-3">Impact</h3>
+            <p class="text-sm text-slate-400">We build solutions that create useful results.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-10 items-center">
+        <div class="glass-card p-6 reveal">
+          <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=800&q=80" alt="Founder working on digital solutions" class="rounded-2xl w-full h-[420px] object-cover" loading="lazy">
+        </div>
+
+        <div class="reveal">
+          <p class="section-label mb-3">Founder Highlight</p>
+          <h2 class="text-4xl font-bold text-white mb-6">Blessing Keabetswe Rankunyana</h2>
+          <p class="text-slate-400 leading-relaxed mb-5">
+            Blessing is the Founder and CEO of Flexxy Tech Solutions. His work focuses on web development, business intelligence, data analytics, ICT strategy and digital service delivery.
+          </p>
+          <p class="text-slate-400 leading-relaxed mb-8">
+            Through Flexxy Tech Solutions, he aims to create practical technology services that help local businesses improve visibility, reporting, operations and customer engagement.
+          </p>
+          <a href="team.html" class="btn-primary">Meet the Team</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="py-14">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <div class="logo-box w-10 h-10 rounded-xl flex items-center justify-center font-bold">F</div>
+          <h3 class="font-syne text-xl font-bold text-white">Flexxy<span class="text-cyan-300">Tech</span></h3>
+        </div>
+        <p class="text-sm text-slate-500">Botswana's Digital Solutions Partner based in Gaborone.</p>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Services</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><a href="services.html" class="hover:text-cyan-300">Business Intelligence</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">Web Development</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">System Development</a></li>
+          <li><a href="services.html" class="hover:text-cyan-300">Automation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Company</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><a href="about.html" class="hover:text-cyan-300">About</a></li>
+          <li><a href="projects.html" class="hover:text-cyan-300">Projects</a></li>
+          <li><a href="team.html" class="hover:text-cyan-300">Team</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-300">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-bold text-white mb-4">Contact</h4>
+        <ul class="space-y-2 text-sm text-slate-500">
+          <li><i class="fa-solid fa-location-dot text-cyan-300 mr-2"></i>Block 6, Gaborone</li>
+          <li><i class="fa-solid fa-phone text-cyan-300 mr-2"></i>+267 76369503</li>
+          <li><i class="fa-solid fa-envelope text-cyan-300 mr-2"></i>flexxytechsolutions@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 pt-8 mt-10 border-t border-cyan-400/10 flex flex-col md:flex-row justify-between gap-3 text-sm text-slate-600">
+      <p>&copy; <span id="year"></span> Flexxy Tech Solutions. All rights reserved.</p>
+      <p>Designed and built in Botswana 🇧🇼</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/26776369503" id="wa-btn" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+  <button id="back-top" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+  <script>
+    document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("mobileMenu").classList.toggle("open"));
+    document.getElementById("year").textContent=new Date().getFullYear();
+
+    const progress=document.getElementById("progress-bar");
+    const backTop=document.getElementById("back-top");
+
+    window.addEventListener("scroll",()=>{
+      const total=document.body.scrollHeight-window.innerHeight;
+      progress.style.width=(window.scrollY/total)*100+"%";
+      backTop.classList.toggle("show",window.scrollY>400);
+    });
+
+    backTop.addEventListener("click",()=>window.scrollTo({top:0,behavior:"smooth"}));
+
+    const themeToggle=document.getElementById("themeToggle");
+    if(localStorage.getItem("flexxy-theme")==="light")document.documentElement.classList.remove("dark");
+    themeToggle.addEventListener("click",()=>{
+      document.documentElement.classList.toggle("dark");
+      localStorage.setItem("flexxy-theme",document.documentElement.classList.contains("dark")?"dark":"light");
+    });
+
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting)entry.target.classList.add("visible")});
+    },{threshold:.12});
+
+    document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+  </script>
+</body>
+</html>
