@@ -382,7 +382,7 @@
       <span class="float-badge" style="animation-delay:.5s"><i class="fa-solid fa-code text-blue-300"></i> Web Apps</span>
       <span class="float-badge" style="animation-delay:1s"><i class="fa-solid fa-database text-cyan-300"></i> SQL</span>
       <span class="float-badge" style="animation-delay:1s"><i class="fa-solid fa-database text-cyan-300"></i> Artificial Intelligence Intergration</span>
-      <span class="float-badge" style="animation-delay:1s"><i class="fa-solid fa-database text-cyan-300"></i> Robotics Automaton</span>
+      <span class="float-badge" style="animation-delay:1s"><i class="fa-solid fa-database text-cyan-300"></i> Robotics Automation</span>
     </div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
@@ -610,12 +610,12 @@
     backTop.addEventListener("click", () => window.scrollTo({ top:0, behavior:"smooth" }));
 
     const themeToggle = document.getElementById("themeToggle");
-    const savedTheme = localStorage.getItem("flexxy-theme");
+    const savedTheme = localStorage.getItem("novarobotics-theme");
     if (savedTheme === "light") document.documentElement.classList.remove("dark");
 
     themeToggle.addEventListener("click", () => {
       document.documentElement.classList.toggle("dark");
-      localStorage.setItem("flexxy-theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
+      localStorage.setItem("novarobotics-theme", document.documentElement.classList.contains("dark") ? "dark" : "light");
     });
 
     const observer = new IntersectionObserver(entries => {
